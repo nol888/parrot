@@ -40,7 +40,7 @@ Get information about available physical memory.
 size_t
 Parrot_sysmem_amount(PARROT_INTERP)
 {
-    return sysconf(_SC_AVPHYS_PAGES) * sysconf(_SC_PAGE_SIZE);
+    return sysconf(_SC_PHYS_PAGES) * sysconf(_SC_PAGE_SIZE);
 }
 
 /*
