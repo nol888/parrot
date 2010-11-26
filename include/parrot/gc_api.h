@@ -32,7 +32,7 @@
 #define ALIGNED_STRING_SIZE(len) (((len) + sizeof (void*) + WORD_ALIGN_1) & WORD_ALIGN_MASK)
 
 /* percent of total memory wasted by the GC system */
-#define GC_THRESHOLD_DEFAULT 10
+#define GC_THRESHOLD_DEFAULT 5
 
 /* pool iteration */
 typedef enum {
