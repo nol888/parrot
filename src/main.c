@@ -307,7 +307,7 @@ help(void)
     printf(
     "    -w --warnings\n"
     "    -G --no-gc\n"
-    "       --gc-threshold=percentage    maximum memory wasted by GC\n"
+    "       --gc-threshold=1-100   percent of total memory wasted by GC\n"
     "       --gc-debug\n"
     "       --leak-test|--destroy-at-end\n"
     "    -g --gc ms|inf set GC type\n"
@@ -405,7 +405,7 @@ parseflags_minimal(PARROT_INTERP, int argc, ARGIN(const char *argv[]))
 
             /* the next character could be '=' */
             if (arg[14] == '=') {
-                arg++;
+                arg+=15;
             }
 
             /* or the end of the string... */
@@ -425,8 +425,8 @@ parseflags_minimal(PARROT_INTERP, int argc, ARGIN(const char *argv[]))
             if (is_all_digits(arg)) {
                 interp->gc_threshold = strtoul(arg, NULL, 10);
 
-                if (interp->gc_threshold > 1000) {
-                    fprintf(stderr, "error: maximum GC threshold is 1000\n");
+                if (interp->gc_threshold > 100) {
+                    fprintf(stderr, "error: maximum GC threshold is 100\n");
                     exit(EXIT_FAILURE);
                 }
             }
