@@ -81,7 +81,6 @@ Parrot_cx_init_scheduler(PARROT_INTERP)
         pt_add_to_interpreters(interp, NULL);
 
         scheduler = Parrot_pmc_new(interp, enum_class_Scheduler);
-        scheduler = VTABLE_share_ro(interp, scheduler);
 
         interp->scheduler = scheduler;
     }
@@ -738,7 +737,6 @@ Parrot_cx_send_message(PARROT_INTERP, ARGIN(STRING *messagetype), SHIM(PMC *payl
         Parrot_Scheduler_attributes * sched_struct = PARROT_SCHEDULER(interp->scheduler);
         PMC *message = Parrot_pmc_new(interp, enum_class_SchedulerMessage);
         VTABLE_set_string_native(interp, message, messagetype);
-        message = VTABLE_share_ro(interp, message);
 
 #if CX_DEBUG
     fprintf(stderr, "sending message[interp=%p]\n", interp);

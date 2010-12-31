@@ -1365,8 +1365,6 @@ The list may also be augmented if additional functionality is required.
 
 =item C<Parrot_PMC_share>
 
-=item C<Parrot_PMC_share_ro>
-
 =item C<Parrot_PMC_shift_float>
 
 =item C<Parrot_PMC_shift_integer>

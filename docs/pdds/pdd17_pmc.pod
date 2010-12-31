@@ -103,8 +103,7 @@ The PMC is a singleton, created in the constant PMC pool.
 
 =item no_ro
 
-Don't create a second read-only vtable for the PMC. (Used, for example,
-by STM's C<share_ro()>.)
+Don't create a second read-only vtable for the PMC.
 
 =item is_shared
 
@@ -555,17 +554,6 @@ Called after the PMC has been thawed to perform any finalization steps.
   void visit (INTERP, PMC *self, visit_info* info)
 
 Used by C<freeze> and C<thaw> to visit the contents of the PMC.
-
-=item share
-
-  void share(INTERP, PMC *self)
-
-  PMC* share_ro(INTERP, PMC *self)
-
-Mark a PMC as shared and read-only.
-
-[NOTE: these seem to be used interchangeably, should be distinguished or
-merged.]
 
 =back
 

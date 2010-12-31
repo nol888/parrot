@@ -210,20 +210,6 @@ Returns 0.
 
 /*
 
-=item C<void share()>
-
-Unknown. (TODO)
-
-=cut
-
-*/
-
-    VTABLE void share() {
-        /* see src/pmc/integer.pmc */
-    }
-
-/*
-
 =item C<PMC *clone()>
 
 Clones the current Undef PMC.
